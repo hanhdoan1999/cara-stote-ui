@@ -1,10 +1,8 @@
 <template>
   <div class="w-full h-full bg-white">
     <div class="relative">
-      <Header :pageActive="this.namePage" :bgColor="this.bgColor" />
-                <div v-if="loading" class="flex justify-center items-center">
-              <img src="../assets/images/Spin-1s-100px.gif">
-          </div>
+      <Header :pageActive="this.namePage" :bgColor="this.bgColor"/>  
+      <div class="loader"></div>        
       <div class="mt-20">
         <div class="relative">
           <h1
@@ -103,20 +101,18 @@
       <Footer />
     </div>
   </div>
+
 </template>
 <script>
+import $ from 'jquery'
 import Footer from "./Footer";
 import Header from "./Header";
 export default {
-async created () {
-    this.loading = true
-    try {
-      this.blogs = this.getBlog();
-      this.loading = false
-    } catch (error) {
-      console.log(error)
-      this.loading = false
-    }
+  created: function(){
+        this.getUnits()
+    },
+  mounted: function(){
+    this.$nextTick(this.getUnits)
   },
   components: {
     Footer,
@@ -127,6 +123,11 @@ async created () {
       loading:false,
       namePage: "Blog",
       bgColor: "bg-white border-b border-light shadow-lg",
+      blogs:[
+          {id:1,title:'8 Inspiring Ways to Wear Dresses in the Winter',des:'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius',src:'blog-04.jpg',date:'22/2/2021'},
+          {id:2,title:'The Great Big List of Men’s Gifts for the Holidays',des:'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius',src:'blog-05.jpg',date:'11/1/2021'},
+          {id:3,title:'5 Winter-to-Spring Fashion Trends to Try Now',des:'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius',src:'blog-06.jpg',date:'12/12/2020'},
+      ],
       tags: [
         { name: "Fashion" },
         { name: "Lifestyle" },
@@ -152,16 +153,13 @@ async created () {
     };
   },
   methods: {
-          getImgUrl(pic) {
+    getImgUrl(pic) {
       return require("../assets/images/" + pic);
     },
-    getBlog(){
-      return  [
-          {id:1,title:'8 Inspiring Ways to Wear Dresses in the Winter',des:'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius',src:'blog-04.jpg',date:'22/2/2021'},
-          {id:2,title:'The Great Big List of Men’s Gifts for the Holidays',des:'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius',src:'blog-05.jpg',date:'11/1/2021'},
-          {id:3,title:'5 Winter-to-Spring Fashion Trends to Try Now',des:'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius',src:'blog-06.jpg',date:'12/12/2020'},
-      ]
-    },
+    getUnits(){
+      $('.loader').fadeOut(3000);
+    }
+
   },
 };
 </script>
@@ -175,5 +173,13 @@ async created () {
 .blog3{
     background-image: url(../assets/images/blog-06.jpg);
 }
-
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../assets/images/loading-nonbg.gif') 50% 50% no-repeat rgb(249,249,249);
+}
 </style>

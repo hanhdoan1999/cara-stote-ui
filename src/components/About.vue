@@ -2,6 +2,7 @@
   <div class="w-full h-full bg-white">
     <div class="relative">
       <Header :pageActive="this.namePage" :bgColor="this.bgColor" />
+       <div class="loader"></div>  
       <div class="mt-20">
         <div class="relative">
           <h1
@@ -93,9 +94,14 @@
   </div>
 </template>
 <script>
+import $ from 'jquery'
 import Footer from "./Footer";
 import Header from "./Header";
 export default {
+
+  mounted: function(){
+    this.$nextTick(this.getUnits)
+  },
   components: {
     Footer,
     Header,
@@ -105,6 +111,11 @@ export default {
       namePage: "About",
       bgColor: "bg-white border-b border-light shadow-lg",
     };
+  },
+  methods: {
+  getUnits(){
+      $('.loader').fadeOut(1000);
+    }
   },
 };
 </script>

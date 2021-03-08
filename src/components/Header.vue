@@ -7,7 +7,7 @@
     >
       <div class="ml-20 w-1/5"><img src="../assets/images/logo-01.png" /></div>
       <ul class="flex items-center w-3/4">
-        <li
+        <li 
           v-for="page in pages"
           :key="page.name"
           :class="
@@ -16,7 +16,8 @@
             }`
           "
         >
-          <router-link @click.native="scrollToTop" :to="{name: `${page.name}`}">{{page.name }}</router-link>
+        <router-link @click.native="scrollToTop" :to="{name: `${page.name}`}">{{page.name }}</router-link>
+
         </li>
       </ul>
       <ul class="flex items-center w-1/5">
@@ -109,6 +110,7 @@
   </div>
 </template>
 <script>
+
 export default {
   props: ["pageActive", "bgColor"],
   created () {
@@ -116,6 +118,7 @@ export default {
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
+
   },
   data() {
     return {
@@ -159,10 +162,12 @@ export default {
     };
   },
   methods: {
+
+
     getImgUrl(pic) {
       return require("../assets/images/" + pic);
     },
-handleScroll(){
+   handleScroll(){
    let headerBG = document.getElementsByClassName("headerbg")[0];
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     headerBG.classList.add("headerActive");
@@ -170,7 +175,9 @@ handleScroll(){
     headerBG.classList.remove("headerActive");
   }
 },
+
 scrollToTop(){
+  console.log('tatata');
   window.scrollTo(0,0);
 }
   },
@@ -180,4 +187,5 @@ scrollToTop(){
 button:focus{
   outline: none;
 }
+
 </style>
