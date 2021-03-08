@@ -189,11 +189,16 @@
               </div>
 
               <div class="flex items-center justify-between my-2">
-                <router-link @click.native="scrollToTop"
-                  to="/product"
+                <router-link @click="scrollToTop"
+                  :to="{ name: 'product', params: { productId: `${product.id}` }}"
                   class="text-title text-md font-normal truncate hover:text-purple"
                   >{{ product.title }}</router-link
                 >
+                <!-- <a href="" @click="showDetail=true"
+                  class="text-title text-md font-normal truncate hover:text-purple"
+                  >{{ product.title }}</a
+                >
+                <product-detail :itemDetails="this.itemDetail" v-if="showDetail"/> -->
                 <a href=""
                   ><span
                     class="material-icons font-normal text-title align-text-top text-lg hover:text-purple"
@@ -236,6 +241,7 @@ export default {
   },
   data() {
     return {
+      showDetail:false,
       itemDetail:null,
       dialogVisible: false,
       showBtnFilter: false,

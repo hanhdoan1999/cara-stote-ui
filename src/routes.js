@@ -16,6 +16,11 @@ const routes = [
     { path: '/about', component: About },
     { path: '/contact', component: Contact },
     { path: '/product', component: ProductDetail },
-    {path:'/blog-detail',component:BlogDetail}
+    {path:'/blog-detail',component:BlogDetail},
+    {
+        path: '/product/:productId',
+        name: 'product',
+        component: ProductDetail
+      }
 ];
 export default routes;

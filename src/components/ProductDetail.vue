@@ -22,9 +22,11 @@
               >Lightweight Jacket</a
             >
           </div>
+
           <!-- Product Popup -->
-              <product-popup/>
+              <product-popup :itemDetail="this.product"/>
           <!-- Description -->
+
           <div class="py-10 px-20 border border-light">
               <el-tabs v-model="activeName" @tab-click="handleClick">
               <el-tab-pane label="Description" name="first">
@@ -158,6 +160,15 @@ import Header from "./Header";
 import carousel from 'vue-owl-carousel2'
 import ProductPopup from './ProductPopup.vue';
 export default {
+
+  mounted() {
+    var id=this.$route.params.productId;
+    fetch("https://fakestoreapi.com/products/"+id)
+      .then((res) => res.json())
+      .then((json) => {
+        this.product = json;
+      });
+  },
   components: {
     carousel ,
     Footer,
@@ -166,6 +177,7 @@ export default {
   },
   data() {
     return {
+      product:[],
       mcarousel:20,
       numcarousel:4,
       rateCustomer:4.5,
