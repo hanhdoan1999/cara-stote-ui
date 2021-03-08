@@ -9,13 +9,13 @@ import ProductDetail from './components/ProductDetail';
 import BlogDetail from './components/BlogDetail'
 
 const routes = [
-    { path: '/', component: Home },
-    { path: '/shop', component: Shop },
-    { path: '/features', component: Features },
-    { path: '/blog', component: Blog },
-    { path: '/about', component: About },
-    { path: '/contact', component: Contact },
-    { path: '/product', component: ProductDetail },
+    { path: '/',  name: 'Home',component: Home },
+    { path: '/shop', name: 'Shop', component: Shop },
+    { path: '/features', name: 'Features',component: Features },
+    { path: '/blog',  name: 'Blog',component: Blog },
+    { path: '/about',  name: 'About',component: About },
+    { path: '/contact',  name: 'Contact',component: Contact },
+    // { path: '/product', component: ProductDetail },
     {path:'/blog-detail',component:BlogDetail},
     {
         path: '/product/:productId',

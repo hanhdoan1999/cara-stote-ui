@@ -16,7 +16,7 @@
             }`
           "
         >
-          <router-link :to="`${page.link}`">{{ page.name }}</router-link>
+          <router-link @click.native="scrollToTop" :to="{name: `${page.name}`}">{{page.name }}</router-link>
         </li>
       </ul>
       <ul class="flex items-center w-1/5">
@@ -131,7 +131,7 @@ export default {
         { name: "Blog", link: "/blog" },
         { name: "About", link: "/about" },
         { name: "Contact", link: "/contact" },
-        { name: "Product Detail", link: "/product" },
+        // { name: "Product Detail", link: "/product" },
       ],
       features: [
         {
@@ -169,6 +169,9 @@ handleScroll(){
   } else {
     headerBG.classList.remove("headerActive");
   }
+},
+scrollToTop(){
+  window.scrollTo(0,0);
 }
   },
 };

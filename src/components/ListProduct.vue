@@ -169,6 +169,9 @@
             ></el-input>
           </div>
           <!-- flex flex-wrap items-center justify-center -->
+          <div v-if="loading" class="flex justify-center items-center">
+              <img src="../assets/images/Spin-1s-100px.gif">
+          </div>
           <div class="grid grid-cols-4">
             <div
               class="mx-5 my-8 p-7 rounded-md shadow group hover:shadow-2xl"
@@ -189,16 +192,11 @@
               </div>
 
               <div class="flex items-center justify-between my-2">
-                <router-link @click="scrollToTop"
+                <router-link @click.native="scrollToTop"
                   :to="{ name: 'product', params: { productId: `${product.id}` }}"
                   class="text-title text-md font-normal truncate hover:text-purple"
                   >{{ product.title }}</router-link
                 >
-                <!-- <a href="" @click="showDetail=true"
-                  class="text-title text-md font-normal truncate hover:text-purple"
-                  >{{ product.title }}</a
-                >
-                <product-detail :itemDetails="this.itemDetail" v-if="showDetail"/> -->
                 <a href=""
                   ><span
                     class="material-icons font-normal text-title align-text-top text-lg hover:text-purple"
@@ -232,15 +230,29 @@ import ProductPopup from './ProductPopup.vue';
 export default {
   components: { ProductPopup },
 
-  mounted() {
-    fetch("https://fakestoreapi.com/products/category/women clothing")
-      .then((res) => res.json())
-      .then((json) => {
-        this.products = json;
-      });
+  // mounted() {
+  //   fetch("https://fakestoreapi.com/products/category/women clothing")
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       this.products = json;
+  //     });
+  // },
+
+   async created () {
+    this.loading = true
+    try {
+      const res = await fetch('https://fakestoreapi.com/products/category/women clothing')
+      this.products = await res.json()
+      this.loading = false
+    } catch (error) {
+      console.log(error)
+      this.loading = false
+    }
   },
+
   data() {
     return {
+       loading: false,
       showDetail:false,
       itemDetail:null,
       dialogVisible: false,
@@ -326,4 +338,5 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+</style>

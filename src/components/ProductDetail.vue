@@ -24,7 +24,14 @@
           </div>
 
           <!-- Product Popup -->
-              <product-popup :itemDetail="this.product"/>
+          <div v-if="loading" class="flex justify-center items-center">
+              <img src="../assets/images/Spin-1s-100px.gif">
+          </div>
+          <div v-else>
+               <product-popup :itemDetail="this.product"/>
+          </div>
+          
+            
           <!-- Description -->
 
           <div class="py-10 px-20 border border-light">
@@ -117,21 +124,21 @@ Submit
         </div>
         <div class="mx-20 mb-20">
             <carousel :autoplay="true" :nav="false" :items="numcarousel" :dots="false" :loop="true" :margin='mcarousel' class="px-10">
-               <template slot="prev"><span class="prev">prev</span></template>
-               <div class="text-center" v-for="product in products" :key="product.src">
+              
+               <div class="text-center" v-for="item in products" :key="item.src">
                  <div class="parent group">
                    <div class="flex z-10 absolute items-end justify-center w-full h-full">
                      <button class="mb-5 opacity-0 group-hover:opacity-100 rounded-full px-6 py-2 text-md text-grayter bg-white hover:text-white hover:bg-grayter">Quick View</button>
                   </div>
                    <div class="child">
-                     <img :src="getImgUrl(product.src)">
+                     <img :src="getImgUrl(item.src)">
                    </div>
                  </div>
                 <div class="flex items-center justify-between my-2">
                 <a
                   href=""
                   class="text-title text-md font-normal truncate hover:text-purple"
-                  >{{product.title}}</a
+                  >{{item.title}}</a
                 >
                 <a href=""
                   ><span
@@ -142,11 +149,11 @@ Submit
                                             
               </div>
               <p class="text-grayter font-normal text-md text-left">
-                $ {{product.price}}
+                $ {{item.price}}
               </p>
 
                </div>
-               <template slot="next"><span class="next">next</span></template>
+              
             </carousel>
         </div>
       </div>
@@ -161,14 +168,28 @@ import carousel from 'vue-owl-carousel2'
 import ProductPopup from './ProductPopup.vue';
 export default {
 
-  mounted() {
-    var id=this.$route.params.productId;
-    fetch("https://fakestoreapi.com/products/"+id)
-      .then((res) => res.json())
-      .then((json) => {
-        this.product = json;
-      });
+  // mounted() {
+  //   var id=this.$route.params.productId;
+  //   fetch("https://fakestoreapi.com/products/"+id)
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       this.product = json;
+  //     });
+  // },
+
+async created () {
+    this.loading = true
+    try {
+      let id=this.$route.params.productId;
+      const res = await fetch('https://fakestoreapi.com/products/'+id)
+      this.product = await res.json()
+      this.loading = false
+    } catch (error) {
+      console.log(error)
+      this.loading = false
+    }
   },
+
   components: {
     carousel ,
     Footer,
@@ -177,6 +198,7 @@ export default {
   },
   data() {
     return {
+      loading:false,
       product:[],
       mcarousel:20,
       numcarousel:4,
