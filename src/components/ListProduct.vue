@@ -1,37 +1,34 @@
 <template>
         <div class="mx-20">
-          <!-- <h1 class="text-grayter font-extrabold text-4xl tracking-normal">
-            PRODUCT OVERVIEW
-          </h1> -->
-          <div class="flex items-center justify-between mt-8 mb-10">
-            <ul class="flex items-center">
+          <div class="flex items-center justify-between mt-8 mb-10 md:flex-row xs:flex-col">
+            <ul class="flex items-center xs:mb-10 md:mb-0">
               <li
-                class="mr-8 text-md font-normal text-gray hover:text-grayter border-opacity-100 border-b border-grayter pb-1"
+                class="md:mr-8 xs:mr-3 text-md font-normal text-gray hover:text-grayter border-opacity-100 border-b border-grayter pb-1"
               >
-                <a href="">All Product</a>
+                <a href="">AllProduct</a>
               </li>
               <li
-                class="mr-8 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
+                class="md:mr-8 xs:mr-3 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
               >
                 <a href="">Women</a>
               </li>
               <li
-                class="mr-8 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
+                class="md:mr-8 xs:mr-3 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
               >
                 <a href="">Men</a>
               </li>
               <li
-                class="mr-8 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
+                class="md:mr-8 xs:mr-3 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
               >
                 <a href="">Bag</a>
               </li>
               <li
-                class="mr-8 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
+                class="md:mr-8 xs:mr-3 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
               >
                 <a href="">Shoes</a>
               </li>
               <li
-                class="mr-8 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
+                class="md:mr-8 xs:mr-3 text-md font-normal text-gray hover:text-grayter border-opacity-0 border-b border-grayter hover:border-opacity-100 pb-1"
               >
                 <a href="">Watches</a>
               </li>
@@ -172,18 +169,18 @@
           <div v-if="loading" class="flex justify-center items-center">
               <img src="../assets/images/Spin-1s-100px.gif">
           </div>
-          <div class="grid grid-cols-4">
+          <div class="grid md:grid-cols-4 xs:grid-cols-1">
             <div
-              class="mx-5 my-8 p-7 rounded-md shadow group hover:shadow-2xl"
+              class=" mx-5 my-8 p-7 rounded-md shadow group hover:shadow-2xl"
               v-for="product in products"
               :key="product.id"
             >
-              <div class="w-full h-60 overflow-hidden relative">
+              <div class="w-full md:h-60 xs:h-48 overflow-hidden relative">
                 <div
                   class="absolute w-full h-full flex items-end justify-center"
                 >
                   <button @click.prevent="showPopupDetail(product)"
-                    class="group-hover:opacity-100 mb-3 shadow-xl opacity-0 rounded-full py-2 px-6 text-md font-normal text-grayter bg-white hover:bg-grayter hover:text-white capitalize "
+                    class=" group-hover:opacity-100 mb-3 shadow-xl opacity-0 rounded-full py-2 px-6 text-md font-normal text-grayter bg-white hover:bg-grayter hover:text-white capitalize "
                   >
                     <a href="">Quick view</a>
                   </button>
@@ -216,7 +213,7 @@
             <product-popup :itemDetail="this.itemDetail"/>
             </el-dialog>
              <!-- Load more button -->
-          <div class="flex items-center justify-center mt-10 mb-20">
+          <div class="flex items-center justify-center mt-10 mb-20 ">
             <button
               class="rounded-full text-grayter font-semibold text-md tracking-tight uppercase bg-light py-2 px-9 hover:text-white hover:bg-black"
             >

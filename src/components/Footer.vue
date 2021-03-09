@@ -1,8 +1,8 @@
 <template >
     <div>
             <div class="bg-black">
-      <div class="grid grid-cols-4 mx-10">
-        <div class="mt-16 mb-10 mx-10">
+      <div class="grid md:grid-cols-4 md:mx-10 xs:grid-cols-2">
+        <div class="md:mt-16 mb-10 md:mx-10 xs:mt-8 xs:mx-5">
           <h1
             class="font-semibold text-white tracking-tight uppercase text-xl mb-5 font-sans"
           >
@@ -23,7 +23,7 @@
             </li>
           </ul>
         </div>
-        <div class="mt-16 mb-10 mx-10">
+        <div class="md:mt-16 mb-10 md:mx-10 xs:mt-8 xs:mx-5">
           <h1
             class="font-semibold text-white tracking-tight uppercase text-xl mb-5 font-sans"
           >
@@ -44,7 +44,7 @@
             </li>
           </ul>
         </div>
-        <div class="mt-16 mb-10 mx-10">
+        <div class="md:mt-16 mb-10 md:mx-10 xs:mt-8 xs:mx-5">
           <h1
             class="font-semibold text-white tracking-tight uppercase text-xl mb-5 font-sans"
           >
@@ -68,7 +68,7 @@
             /></a>
           </div>
         </div>
-        <div class="mt-16 mb-10 mx-10">
+        <div class="md:mt-16 mb-10 md:mx-10 xs:mt-8 xs:mx-5">
           <h1
             class="font-semibold text-white tracking-tight uppercase text-xl mb-5 font-sans"
           >

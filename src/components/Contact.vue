@@ -9,7 +9,7 @@
           >
             Contact
           </h1>
-          <img src="../assets/images/bg-01.jpg" alt="Content" class="h-full" />
+          <img src="../assets/images/bg-01.jpg" alt="Content" class="h-full"  />
         </div>
         <!-- flex items-center justify-between -->
         <div class="my-20 mx-16 grid grid-cols-2">
@@ -35,7 +35,7 @@
             </form>
           </div>
             <div
-            class="border border-light p-24"
+            class="border border-light p-24 "
           >
           <div class="flex justify-start items-start">
               <i class="el-icon-location-outline mr-3 text-2xl"></i>

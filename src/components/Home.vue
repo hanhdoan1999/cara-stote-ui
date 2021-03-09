@@ -8,11 +8,11 @@
           <div
             class="absolute flex flex-col justify-center items-start w-full h-full ml-20"
           >
-            <p class="text-grayter tracking-tight text-3xl">
+            <p class="sm:text-md text-grayter tracking-tight md:text-3xl">
               {{ carousel.des }}
             </p>
             <h1
-              class="text-7xl font-extrabold font-serif text-grayter tracking-tight uppercase my-5"
+              class="sm:text-lg md:text-7xl font-extrabold font-serif text-grayter tracking-tight uppercase my-5"
             >
               {{ carousel.heading }}
             </h1>
@@ -22,24 +22,24 @@
               <a href="">shop now</a>
             </button>
           </div>
-          <img :src="getImgUrl(carousel.src)" />
+          <img :src="getImgUrl(carousel.src)"/>
         </el-carousel-item>
       </el-carousel>
     </div>
 
     <!-- banner -->
-    <div class="my-16 mx-16 flex items-center justify-center ">
+    <div class="mb-16 mt-16 mx-16 md:flex-row flex items-center justify-center xs:flex-col ">
       <div
-        class="w-full relative mx-4 border border-light group hover:bg-purple"
+        class="w-full relative mx-4 border border-light group hover:bg-purple xs:my-3 "
         v-for="banner in banners"
         :key="banner.id"
       >
         <!-- mt-10 ml-10 -->
         <div
-          class="absolute flex flex-col justify-center items-start ml-10 w-full h-full"
+          class="absolute flex flex-col justify-center items-start ml-10 w-full h-full "
         >
           <h1
-            class="font-bold text-3xl tracking-tight text-grayter group-hover:text-white"
+            class="font-bold text-3xl  tracking-tight text-grayter group-hover:text-white"
           >
             {{ banner.heading }}
           </h1>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="mx-20">
-      <h1 class="text-grayter font-extrabold text-4xl tracking-normal">
+      <h1 class="text-grayter font-extrabold md:text-4xl tracking-normal xs:text-xl xs:text-center md:text-left">
         PRODUCT OVERVIEW
       </h1>
     </div>

@@ -5,8 +5,8 @@
         `fixed top-0 w-full flex items-center h-20 z-20 headerbg ${bgColor}`
       "
     >
-      <div class="ml-20 w-1/5"><img src="../assets/images/logo-01.png" /></div>
-      <ul class="flex items-center w-3/4">
+      <div class="md:ml-20 xs:ml-5 w-1/5 cursor-pointer mr-5 p-14"><img src="../assets/images/logo-01.png" class="w-full h-auto object-cover"/></div>
+      <ul class="md:flex items-center w-3/5 xs:hidden">
         <li 
           v-for="page in pages"
           :key="page.name"
@@ -20,7 +20,7 @@
 
         </li>
       </ul>
-      <ul class="flex items-center w-1/5">
+      <ul class="md:flex items-center w-1/5 xs:hidden">
         <li class="mr-7">
           <a href="#" @click="drawerSearch=true"
             ><span class="material-icons text-2xl text-black hover:text-purple"
@@ -85,7 +85,7 @@
         <h1 class="font-semibold tracking-tight text-xl text-grayter my-10">
           TOTAL: $75.00
         </h1>
-        <div class="flex items-center justify-center">
+        <div class=" flex items-center justify-center">
           <button
             class="text-md font-medium py-3 mb-5 mr-3 px-6 rounded-full text-white bg-grayter border border-light hover:text-white hover:bg-purple uppercase focus:outline-none"
           >

@@ -16,7 +16,7 @@
           <div class="grid grid-cols-3">
             <div class="col-span-2 mr-16">
               <h1 class="font-bold text-3xl text-black mb-5">Our Story</h1>
-              <p class="text-gray text-md mb-5">
+              <p class="text-gray text-md mb-5 ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 consequat consequat enim, non auctor massa ultrices non. Morbi
                 sed odio massa. Quisque at vehicula tellus, sed tincidunt augue.
@@ -30,7 +30,7 @@
                 Proin ut est diam. Donec condimentum euismod tortor, eget
                 facilisis diam faucibus et. Morbi a tempor elit.
               </p>
-              <p class="text-gray text-md mb-5">
+              <p class="text-gray text-md mb-5 ">
                 Donec gravida lorem elit, quis condimentum ex semper sit amet.
                 Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut
                 fringilla turpis in vehicula vehicula. Pellentesque congue ac
@@ -46,19 +46,29 @@
                 New York, NY 10018 or call us on (+1) 96 716 6879
               </p>
             </div>
-              <div class="mt-20 border-4 border-light">
-                <div class="parent -ml-5 -mt-5">
-                    <div class="child bg-about1"></div>
+            <div class="flex items-center justify-start"
+            >
+              <div class="ml-4 pb-4 border-4 border-light">
+                <div class="parent -mt-6 -ml-6">
+                    <div class="child">
+                      <img src="../assets/images/about-01.jpg" class="h-auto">
+                    </div>
                 </div>
               </div>
+            </div>
 
           </div>
           <div class="grid grid-cols-3 mt-24">
-              <div class="ml-4 border-4 border-light">
-                <div class="parent -mt-4 -ml-4">
-                    <div class="child bg-about2"></div>
+            <div class="flex items-center justify-start"
+            >
+              <div class="ml-4 pb-4 border-4 border-light">
+                <div class="parent -mt-6 -ml-6">
+                    <div class="child">
+                      <img src="../assets/images/about-02.jpg" class="h-auto">
+                    </div>
                 </div>
               </div>
+            </div>
             <div class="col-span-2 ml-14">
               <h1 class="font-bold text-3xl text-black mb-5">Our Mission</h1>
               <p class="text-gray text-md mb-5">
@@ -77,7 +87,7 @@
                 iaculis.
               </p>
               <div class="pt-2 pl-7 border-l-2 border-light">
-                <p class="text-md mb-2 font-semibold text-gray italic ">
+                <p class="text-md mb-2 font-semibold text-gray italic">
                   Creativity is just connecting things. When you ask creative
                   people how they did something, they feel a little guilty
                   because they didn't really do it, they just saw something. It

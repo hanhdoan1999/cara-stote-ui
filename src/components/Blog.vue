@@ -6,7 +6,7 @@
       <div class="mt-20">
         <div class="relative">
           <h1
-            class=" w-full h-full absolute flex items-center justify-center font-bold text-6xl tracking-normal text-white capitalize "
+            class="w-full h-full absolute flex items-center justify-center font-bold text-6xl tracking-normal text-white capitalize "
           >
             Blog
           </h1>
@@ -30,7 +30,7 @@
                 </div>
       
               <h1
-                class="font-bold tracking-tight text-3xl text-grayter my-3 hover:text-purple"
+                class=" font-bold tracking-tight text-3xl text-grayter my-3 hover:text-purple"
               >
                 <router-link to="/blog-detail">{{ blog.title }}</router-link>
               </h1>
@@ -45,7 +45,7 @@
                 <button class="focus:outline-none group hover:text-purple">
                 <a
                   href=""
-                  class="font-semibold font-lg text-black group-hover:text-purple"
+                  class=" font-semibold text-lg text-black group-hover:text-purple"
                   >CONTINUE READING
                 </a>
                 <span class="material-icons ml-2 align-bottom">trending_flat</span>
@@ -60,13 +60,13 @@
           <div class="ml-20">
             <el-input placeholder="Search" class="rounded-full"><i class="el-icon-search  el-input__icon" slot="suffix"></i></el-input>
             <div class="my-16">
-              <h1 class="font-bold tracking-tight text-3xl text-grayter mb-10">Categories</h1>
+              <h1 class="font-bold tracking-tight text-3xl text-grayter mb-10 ">Categories</h1>
               <ul v-for="tag in tags" :key="tag.name">
-                <li class="p-3 text-md text-gray font-semibold border-b border-light hover:text-purple"><a href="">{{tag.name}}</a></li>
+                <li class=" p-3 text-md text-gray font-semibold border-b border-light hover:text-purple"><a href="">{{tag.name}}</a></li>
               </ul>
             </div>
             <div class="mb-16">
-              <h1 class="font-bold tracking-tight text-3xl text-grayter mb-10">Featured Products</h1>
+              <h1 class="font-bold tracking-tight text-3xl text-grayter mb-10 ">Featured Products</h1>
               <div v-for="feature in features" :key="feature.id" class="flex items-center justify-between">
                 <div class="my-2 cursor-pointer bg-purple">
                   <img :src="getImgUrl(feature.src)" alt="Fearutes Product" class="hover:opacity-40">
@@ -78,9 +78,9 @@
               </div>
               
             </div>
-            <div class="mb-16">
-              <h1 class="font-bold tracking-tight text-3xl text-grayter my-5">Archive</h1>
-              <div  v-for=" archive in archives" :key="archive.month" class="my-4 flex items-center justify-between group cursor-pointer">
+            <div class="mb-16 ">
+              <h1 class="font-bold tracking-tight text-3xl text-grayter my-5 ">Archive</h1>
+              <div  v-for=" archive in archives" :key="archive.month" class="  my-4 flex items-center justify-between group cursor-pointer">
                 <div class="text-md text-gray font-semibold group-hover:text-purple">{{archive.month}}</div>
                 <div class="text-md text-gray font-semibold group-hover:text-purple">({{archive.num}})</div>
               </div>
