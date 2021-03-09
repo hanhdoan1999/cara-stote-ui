@@ -6,15 +6,15 @@
       <div class="mt-20">
         <div class="relative">
           <h1
-            class=" w-full h-full absolute flex items-center justify-center font-bold text-6xl tracking-normal text-white capitalize "
+            class=" w-full h-full absolute flex items-center justify-center font-bold md:text-6xl xs:text-2xl tracking-normal text-white capitalize "
           >
             About
           </h1>
-          <img src="../assets/images/bg-01.jpg" alt="Content" class="h-full" />
+          <img src="../assets/images/bg-01.jpg" alt="Content" class="md:h-full xs:h-auto" />
         </div>
-        <div class="my-20 mx-20">
-          <div class="grid grid-cols-3">
-            <div class="col-span-2 mr-16">
+        <div class="md:my-20 md:mx-20 xs:mx-10 xs:my-10 ">
+          <div class="grid md:grid-cols-3 xs:grid-cols-1">
+            <div class="col-span-2 md:mr-16 xs:mr-0">
               <h1 class="font-bold text-3xl text-black mb-5">Our Story</h1>
               <p class="text-gray text-md mb-5 ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
@@ -41,7 +41,7 @@
                 efficitur, quam velit convallis ipsum, et maximus enim ligula ac
                 ligula.
               </p>
-              <p class="text-gray text-md mb-5">
+              <p class="text-gray text-md md:mb-5 xs:mb-16">
                 Any questions? Let us know in store at 8th floor, 379 Hudson St,
                 New York, NY 10018 or call us on (+1) 96 716 6879
               </p>
@@ -58,7 +58,7 @@
             </div>
 
           </div>
-          <div class="grid grid-cols-3 mt-24">
+          <div class="grid md:grid-cols-3 mt-24 xs:grid-cols-1">
             <div class="flex items-center justify-start"
             >
               <div class="ml-4 pb-4 border-4 border-light">
@@ -69,7 +69,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-2 ml-14">
+            <div class="col-span-2 md:ml-14 xs:ml-0 xs:mt-10">
               <h1 class="font-bold text-3xl text-black mb-5">Our Mission</h1>
               <p class="text-gray text-md mb-5">
                 Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum

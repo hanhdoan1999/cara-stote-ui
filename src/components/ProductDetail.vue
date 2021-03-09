@@ -3,7 +3,7 @@
     <div class="relative">
       <Header :pageActive="this.namePage" :bgColor="this.bgColor" />
       <div class="mt-20 ">
-        <div class="mx-28">
+        <div class="md:mx-28 xs:mx-5">
           <div class="flex items-center justify-start pt-8">
             <a href="" class="text-sm hover:text-purple mr-2"
               >Home<span class="material-icons text-sm align-middle ml-1"
@@ -34,10 +34,10 @@
             
           <!-- Description -->
 
-          <div class="py-10 px-20 border border-light">
+          <div class="md:py-10 xs:py-5 md:px-20 xs:px-10 border border-light">
               <el-tabs v-model="activeName" @tab-click="handleClick">
               <el-tab-pane label="Description" name="first">
-                <p class="my-10  text-md text-gray">Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.</p>
+                <p class="md:my-10 xs:my-2 text-md text-gray">Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.</p>
               </el-tab-pane>
               <el-tab-pane label="Additional information" name="second"> 
                 <table class="text-md text-gray my-10">
@@ -64,13 +64,13 @@
                 </table>
               </el-tab-pane>
               <el-tab-pane label="Reviews (1)" name="third">
-                <div class="my-10 text-md text-gray">
-                  <div class="flex items-start justify-start">
+                <div class="md:my-10 xs:my-2 text-md text-gray">
+                  <div class="flex items-start justify-start flex-wrap">
                       <img src="../assets/images/avatar-01.jpg" class="rounded-full">
-                    <div class="ml-5">
-                        <div class="flex items-center justify-start">
-                          <p class="text-xl font-title text-grayter">Ariana Grande</p>
-                          <el-rate class="align-baseline ml-5"
+                    <div class="md:ml-5 xs:ml-0">
+                        <div class="flex items-center justify-start flex-wrap">
+                          <p class="md:text-xl font-title text-grayter">Ariana Grande</p>
+                          <el-rate class="align-baseline md:ml-5 xs:ml-0 xs:my-1"
                             v-model="rateCustomer"
                             disabled
                             show-score
@@ -81,14 +81,14 @@
                         <p>Quod autem in homine praestantissimum atque optimum est, id deseruit. Apud ceteros autem philosophos</p>
                     </div>
                   </div>
-                  <div class="mt-14">
+                  <div class="md:mt-14 xs:mt-6">
                      <p class="text-xl font-title text-grayter">Add a review</p>
-                     <p class="mb-10">Your email address will not be published. Required fields are marked *</p>
+                     <p class="md:mb-10 xs:mb-5">Your email address will not be published. Required fields are marked *</p>
                      <div class="flex items-center justify-start mb-5">
                        <span class="mr-5">Your Rating</span>
                        <el-rate v-model="valueRate"></el-rate>
                      </div>
-                     <div class="w-1/2">
+                     <div class="md:w-1/2 xs:w-full">
                      <p class="mb-3">Your review</p>
                      <textarea rows="3" class="border border-light p-5 w-full focus:outline-none"></textarea>
                      <div class="flex items-center justify-between ">
@@ -118,12 +118,11 @@ Submit
           <span>Categories: Jacket, Men</span>
         </div>
         <!-- Related Products -->
-        <div class="my-16">
-            <h1 class="text-center text-4xl font-bold tracking-tight text-grayter mb-16">Related Products</h1>
-
+        <div class="md:my-16 xs:my-8">
+            <h1 class="text-center text-4xl font-bold tracking-tight text-grayter md:mb-16 xs:mb-5">Related Products</h1>
         </div>
-        <div class="mx-20 mb-20">
-            <carousel :autoplay="true" :nav="false" :items="numcarousel" :dots="false" :loop="true" :margin='mcarousel' class="px-10">
+        <div class="md:mx-20 xs:mx-5  md:mb-20 xs:mb-5">
+            <carousel :autoplay="true" :nav="false" :items="numcarousel" :responsive="{0:{items:1},600:{items:3}}" :dots="false" :loop="true" :margin='mcarousel' class="px-10">
               
                <div class="text-center" v-for="item in products" :key="item.src">
                  <div class="parent group">
@@ -232,6 +231,6 @@ async created () {
 </script>
 <style>
 .inputSelect .el-input__inner {
-  height: 37px !important;
+  height: 33px !important;
 }
 </style>

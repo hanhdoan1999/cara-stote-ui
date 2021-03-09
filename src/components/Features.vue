@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full h-full bg-white">
+  <div class="w-full  bg-white">
     <div class="relative">
       <Header :pageActive="this.namePage" :bgColor="this.bgColor" />
       <div class="mt-20">
-        <div class="grid grid-cols-3 justify-center mx-10 p-20">
-          <div class="col-span-2 border-light border p-4 mr-6 fearure">
+        <div class="grid md:grid-cols-3 xs:grid-cols-1 justify-center md:mx-10 md:p-20 xs:p-3 xs:mx-2">
+          <div class="col-span-2 border-light border p-4 md:mr-6 xs:mr-0 fearure xs:mb-5">
             <el-table :data="features" style="width: 100%">
               <el-table-column label="PRODUCT" width="100">
                 <template slot-scope="scope">
@@ -25,7 +25,7 @@
                   >
                 </template>
               </el-table-column>
-              <el-table-column label="QUANTITY">
+              <el-table-column label="QUANTITY" width="180">
                 <template slot-scope="scope">
                   <div>
                     <el-input-number
@@ -45,15 +45,15 @@
                 </template>
               </el-table-column>
             </el-table>
-            <div class="flex justify-between items-center my-8">
-              <div class="flex items-center justify-start">
+            <div class="flex justify-between items-center my-8 flex-wrap ">
+              <div class="flex items-center justify-start flex-wrap xs:my-3">
                 <input
                   type="text"
                   placeholder="Coupon Code"
-                  class="py-2 px-6 rounded-full border border-light focus:outline-none"
+                  class="py-2 px-6 rounded-full border border-light focus:outline-none xs:my-3"
                 />
                 <button
-                  class="text-md font-medium py-2 px-6 rounded-full text-grayter bg-btn border border-light hover:text-white hover:bg-purple uppercase ml-5 focus:outline-none"
+                  class="text-md font-medium py-2 px-6 rounded-full text-grayter bg-btn border border-light hover:text-white hover:bg-purple uppercase md:ml-5 sm:ml-0 focus:outline-none"
                 >
                   Apply coupon
                 </button>
@@ -65,7 +65,7 @@
               </button>
             </div>
           </div>
-          <div class="ml-3 py-3 px-8 border-light border">
+          <div class="md:ml-3 py-3 md:px-8 xs:ml-0 xs:px-4 border-light border">
             <h1 class="font-bold tracking-tight text-xl text-grayter my-5">
               CART TOTALS
             </h1>

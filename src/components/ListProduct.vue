@@ -3,7 +3,7 @@
           <div class="flex items-center justify-between mt-8 mb-10 md:flex-row xs:flex-col">
             <ul class="flex items-center xs:mb-10 md:mb-0">
               <li
-                class="md:mr-8 xs:mr-3 text-md font-normal text-gray hover:text-grayter border-opacity-100 border-b border-grayter pb-1"
+                class="md:mr-8 xs:mx-3 text-md font-normal text-gray hover:text-grayter border-opacity-100 border-b border-grayter pb-1"
               >
                 <a href="">AllProduct</a>
               </li>

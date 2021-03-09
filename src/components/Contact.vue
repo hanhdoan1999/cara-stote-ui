@@ -5,16 +5,16 @@
       <div class="mt-20">
         <div class="relative">
           <h1
-            class=" w-full h-full absolute flex items-center justify-center font-bold text-6xl tracking-normal text-white capitalize "
+            class=" w-full h-full absolute flex items-center justify-center font-bold md:text-6xl xs:text-2xl tracking-normal text-white capitalize "
           >
             Contact
           </h1>
-          <img src="../assets/images/bg-01.jpg" alt="Content" class="h-full"  />
+          <img src="../assets/images/bg-01.jpg" alt="Content" class="md:h-full xs:h-auto"  />
         </div>
         <!-- flex items-center justify-between -->
-        <div class="my-20 mx-16 grid grid-cols-2">
+        <div class="md:my-20 md:mx-16 xs:my-10 xs:mx-8 grid md:grid-cols-2 xs:grid-cols-1">
           <div
-            class="border border-light p-16 flex flex-col justify-center"
+            class="border border-light md:p-16 xs:p-8 flex flex-col justify-center xs:mb-8"
           >
             <h1 class="mb-10 text-center font-normal text-2xl text-grayter">
               Send Us A Message
@@ -35,7 +35,7 @@
             </form>
           </div>
             <div
-            class="border border-light p-24 "
+            class="border border-light md:p-24 xs:p-10 "
           >
           <div class="flex justify-start items-start">
               <i class="el-icon-location-outline mr-3 text-2xl"></i>

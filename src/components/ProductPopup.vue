@@ -1,19 +1,19 @@
 <template>
-          <div class="grid-cols-2 grid my-10">
+          <div class="md:grid-cols-2 xs:grid-cols-1 grid my-10">
             <div class="mx-10">
               <!-- <img src="../assets/images/product-detail-01.jpg" alt="" /> -->
-              <img :src="`${itemDetail.image}`" alt="">
+              <img :src="`${itemDetail.image}`" alt="Product">
             </div>
             <div class="m-5">
-              <h1 class="mb-5 text-3xl font-title text-grayter ">
+              <h1 class="mb-5 md:text-3xl xs:text-xl font-title text-grayter ">
                 {{itemDetail.title}}
               </h1>
-              <p class="text-xl mb-5 font-title text-grayter font-semibold">
+              <p class="md:text-xl xs:text-lg mb-5 font-title text-grayter font-semibold">
                 ${{itemDetail.price}}              </p>
-              <p class="text-md mb-5 font-title text-gray font-medium">
+              <p class="text-md mb-5 font-title text-gray font-medium ">
                 {{itemDetail.description}}
               </p>
-              <div class="mx-20">
+              <div class="md:mx-20 xs:mx-0">
                 <div class="flex items-center justify-between mb-5">
                   <p class="text-md font-title text-gray font-medium w-1/4">
                     Size
@@ -51,7 +51,7 @@
                       </el-option>
                     </el-select>
                     <el-input-number
-                      size="medium"
+                      size="small"
                       v-model="num2"
                       :min="1"
                       :max="10"
