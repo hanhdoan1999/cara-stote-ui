@@ -1,23 +1,23 @@
 <template>
-  <div class="w-full h-full bg-white">
-    <div class="relative h-screen">
+  <div class="w-full bg-white">
+    <div class="relative">
      <Header :pageActive="this.namePage" :bgColor="this.bgColor"/>
-      <el-carousel class="h-screen w-full relative">
+      <el-carousel class="w-full relative md:h-screen xs:h-52 sm:h-72">
         <el-carousel-item v-for="carousel in carousels" :key="carousel.id">
           <!-- mt-64 ml-20 -->
           <div
-            class="absolute flex flex-col justify-center items-start w-full h-full ml-20"
+            class="absolute flex flex-col justify-center items-start w-full h-full md:ml-20 xs:ml-5"
           >
-            <p class="sm:text-md text-grayter tracking-tight md:text-3xl">
+            <p class="xs:text-sm text-grayter tracking-tight md:text-3xl">
               {{ carousel.des }}
             </p>
             <h1
-              class="sm:text-lg md:text-7xl font-extrabold font-serif text-grayter tracking-tight uppercase my-5"
+              class="xs:text-lg md:text-7xl font-extrabold font-serif text-grayter tracking-tight uppercase md:my-5 xs:my-1"
             >
               {{ carousel.heading }}
             </h1>
             <button
-              class="rounded-full bg-purple text-white font-medium text-md px-4 py-3 uppercase mt-5 hover:shadow-xl hover:bg-black "
+              class="rounded-full bg-purple text-white font-medium md:text-md md:px-4 md:py-3 xs:text-xs xs:px-3 xs:py-1 uppercase xs:mt-1 md:mt-5 hover:shadow-xl hover:bg-black "
             >
               <a href="">shop now</a>
             </button>
@@ -28,7 +28,7 @@
     </div>
 
     <!-- banner -->
-    <div class="mb-16 mt-16 md:mx-16 xs:mx-8 md:flex-row flex items-center justify-center xs:flex-col ">
+    <div class="mb-16 md:mt-16 xs:mt-0 md:mx-16 xs:mx-8 md:flex-row flex items-center justify-center xs:flex-col ">
       <div
         class="w-full relative mx-4 border border-light group hover:bg-purple xs:my-3 "
         v-for="banner in banners"

@@ -1,6 +1,6 @@
 <template >
     <div>
-            <div class="bg-black">
+    <div class="bg-black ">
       <div class="grid md:grid-cols-4 md:mx-10 xs:grid-cols-2">
         <div class="md:mt-16 mb-10 md:mx-10 xs:mt-8 xs:mx-5">
           <h1
@@ -77,11 +77,11 @@
           <form action="" method="">
             <input
               type="text"
-              class="border-b border-grayter py-2 outline-none bg-black text-white mb-3 "
+              class="border-b border-grayter py-2 outline-none bg-black text-white mb-3 md:text-md xs:text-sm"
               placeholder="email@example.com"
             />
             <button
-              class="rounded-full text-white font-semibold text-md tracking-tight uppercase bg-purple py-2 md:px-9 xs:px-8 hover:text-white hover:text-purple hover:bg-white"
+              class="rounded-full text-white font-semibold text-md tracking-tight uppercase bg-purple py-2 md:px-9 xs:px-7 hover:text-white hover:text-purple hover:bg-white"
             >
               <a href="">Subcriber</a>
             </button>

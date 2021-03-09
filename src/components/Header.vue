@@ -24,7 +24,7 @@
 
         </li>
       </ul>
-      <ul :class="`md:flex items-baseline justify-end md:mb-0 w-1/5 xs:ml-4 xs:mb-4 xs:${this.showPage}`">
+      <ul :class="`md:flex md:items-baseline md:justify-end md:mb-0 w-1/5 xs:ml-4 xs:mb-4 xs:${this.showPage}`">
         <li class="md:mr-7 xs:mr-3">
           <a href="#" @click="drawerSearch=true"
             ><span class="material-icons text-2xl text-black hover:text-purple"
