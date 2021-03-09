@@ -2,16 +2,20 @@
   <div>
     <div
       :class="
-        `fixed top-0 w-full flex items-center h-20 z-20 headerbg ${bgColor}`
+        `fixed top-0 w-full flex md:flex-row xs:flex-col xs:items-start md:items-center md:h-20 xs:h-auto  z-20 headerbg ${bgColor}`
       "
     >
-      <div class="md:ml-20 xs:ml-5 w-1/5 cursor-pointer mr-5 p-14"><img src="../assets/images/logo-01.png" class="w-full h-auto object-cover"/></div>
-      <ul class="md:flex items-center w-3/5 xs:hidden">
+      <div class="md:ml-20 md:w-1/5 cursor-pointer md:mr-5 xs:m-4 xs:flex xs:items-center xs:justify-between xs:w-full">
+          <img src="../assets/images/logo-01.png"/>
+          <span v-if="btnOpen===false" @click="openMenu" class="material-icons xs:mr-8 md:hidden" >menu</span>
+          <span v-else @click="closeMenu" class="material-icons xs:mr-8 md:hidden">close</span>
+      </div>
+      <ul :class="`md:flex md:flex-row xs:flex-col xs:items-start md:items-center w-3/5 xs:${this.showPage}`" >
         <li 
           v-for="page in pages"
           :key="page.name"
-          :class="
-            `mr-8 font-medium text-md text-black hover:text-purple ${
+          :class=" 
+            `xs:my-2 xs:ml-4 mr-8 font-medium text-md text-black hover:text-purple ${
               pageActive === page.name ? 'text-purple' : 'text-black'
             }`
           "
@@ -20,42 +24,32 @@
 
         </li>
       </ul>
-      <ul class="md:flex items-center w-1/5 xs:hidden">
-        <li class="mr-7">
+      <ul :class="`md:flex items-baseline justify-end md:mb-0 w-1/5 xs:ml-4 xs:mb-4 xs:${this.showPage}`">
+        <li class="md:mr-7 xs:mr-3">
           <a href="#" @click="drawerSearch=true"
             ><span class="material-icons text-2xl text-black hover:text-purple"
               >search</span
             ></a
           >
         </li>
-        <li class="mr-7">
-          <a href="#" @click="drawer = true"
-            ><span class="material-icons text-2xl text-black hover:text-purple"
-              >shopping_cart</span
-            ></a
-          >
-          <span
-            class="align-top -ml-2 rounded-full text-xs font-normal text-white bg-purple px-1"
-            >4</span
-          >
+        <li class="md:mr-7 xs:mr-3">
+          <a href="#" @click="openCart" class="relative">
+            <span class="material-icons text-2xl text-black hover:text-purple">shopping_cart</span>
+             <span class=" absolute align-top rounded-full text-xs font-normal text-white bg-purple px-1 -ml-2">4</span>
+            </a>
         </li>
-
-        <li class="mr-7">
-          <a href="#"
-            ><span class="material-icons text-2xl text-black hover:text-purple"
-              >favorite_border</span
-            ></a
-          >
-          <span
-            class="align-top -ml-2 rounded-full text-xs font-normal text-white bg-purple px-1"
-            >2</span
-          >
+        <!-- favorite_border -->
+        <li class="md:mr-7 xs:mr-3">
+          <a href="#" class="relative">
+            <span class="material-icons text-2xl text-black hover:text-purple">favorite_border </span>
+             <span class=" absolute align-top rounded-full text-xs font-normal text-white bg-purple px-1 -ml-2">2</span>
+            </a>
         </li>
       </ul>
     </div>
     <!-- CART -->
-    <el-drawer :visible.sync="drawer">
-      <div class="mx-16 mt-0">
+    <el-drawer :visible.sync="drawer" :size='this.sizeScreen' >
+      <div class="md:mx-16 mt-0 xs:mx-10">
         <h1 class="font-bold tracking-tight text-2xl text-grayter mb-3">
           YOUR CART
         </h1>
@@ -101,7 +95,7 @@
     </el-drawer>
     <!-- SEARCH -->
     <el-drawer :visible.sync="drawerSearch" :direction="direction">
-        <div class="flex justify-center items-center mx-32 mt-0" >
+        <div class="flex justify-center items-center md:mx-32 xs:mx-10 mt-0 " >
         <el-input placeholder="Search" size="large" v-model="valueSearch">
           <i class="el-icon-search el-input__icon" slot="prefix"> </i
         ></el-input>
@@ -110,8 +104,9 @@
   </div>
 </template>
 <script>
-
+ import $ from 'jquery'
 export default {
+
   props: ["pageActive", "bgColor"],
   created () {
     window.addEventListener('scroll', this.handleScroll);
@@ -122,6 +117,9 @@ export default {
   },
   data() {
     return {
+      showPage:'hidden',
+      btnOpen:false,
+      sizeScreen:'',
       drawer: false,
       drawerSearch:false,
       direction:'ttb',
@@ -162,7 +160,29 @@ export default {
     };
   },
   methods: {
-
+    openMenu(){
+      let headerBG = document.getElementsByClassName("headerbg")[0];
+      if (document.body.scrollTop === 0 || document.documentElement.scrollTop === 0) {
+        headerBG.classList.add("headerActive");
+      } 
+      this.btnOpen=true
+      this.showPage='flex'
+    },
+    closeMenu(){
+      this.btnOpen=false
+      this.showPage='hidden'
+    },
+    getSizeDrawer(){
+      if($(window).width()>=768){
+        this.sizeScreen='30%'
+      }else{
+         this.sizeScreen='100%'
+      }
+    },
+    openCart(){
+      this.drawer = true
+      this.getSizeDrawer()
+    },
 
     getImgUrl(pic) {
       return require("../assets/images/" + pic);
