@@ -1,5 +1,5 @@
 <template>
-        <div class="mx-20">
+        <div class="md:mx-20 xs:mx-10">
           <div class="flex items-center justify-between mt-8 mb-10 md:flex-row xs:flex-col">
             <ul class="flex items-center xs:mb-10 md:mb-0">
               <li
@@ -76,7 +76,7 @@
           <!-- filter -->
           <div class="bg-filter" v-if="showFilter">
             <div class="py-10 mx-14">
-              <div class="grid grid-cols-4">
+              <div class="grid md:grid-cols-4 xs:grid-cols-1">
                 <div>
                   <h1 class="mb-4 font-bold text-md text-grayter capitalize">
                     Sort by
@@ -171,11 +171,11 @@
           </div>
           <div class="grid md:grid-cols-4 xs:grid-cols-1">
             <div
-              class=" mx-5 my-8 p-7 rounded-md shadow group hover:shadow-2xl"
+              class=" md:mx-5 md:my-8 md:p-7 xs:p-5 xs:my-3 xs:mx-2 rounded-md shadow group hover:shadow-2xl"
               v-for="product in products"
               :key="product.id"
             >
-              <div class="w-full md:h-60 xs:h-48 overflow-hidden relative">
+              <div class="w-full h-60 overflow-hidden relative">
                 <div
                   class="absolute w-full h-full flex items-end justify-center"
                 >

@@ -68,7 +68,7 @@
             /></a>
           </div>
         </div>
-        <div class="md:mt-16 mb-10 md:mx-10 xs:mt-8 xs:mx-5">
+        <div class="md:mt-16 mb-10 md:mx-10 xs:mt-8 xs:mx-5 overflow-hidden">
           <h1
             class="font-semibold text-white tracking-tight uppercase text-xl mb-5 font-sans"
           >
@@ -77,11 +77,11 @@
           <form action="" method="">
             <input
               type="text"
-              class="border-b border-grayter py-2 outline-none bg-black text-white mb-3"
+              class="border-b border-grayter py-2 outline-none bg-black text-white mb-3 "
               placeholder="email@example.com"
             />
             <button
-              class="rounded-full text-white font-semibold text-md tracking-tight uppercase bg-purple py-2 px-9 hover:text-white hover:text-purple hover:bg-white"
+              class="rounded-full text-white font-semibold text-md tracking-tight uppercase bg-purple py-2 md:px-9 xs:px-8 hover:text-white hover:text-purple hover:bg-white"
             >
               <a href="">Subcriber</a>
             </button>

@@ -28,18 +28,17 @@
     </div>
 
     <!-- banner -->
-    <div class="mb-16 mt-16 mx-16 md:flex-row flex items-center justify-center xs:flex-col ">
+    <div class="mb-16 mt-16 md:mx-16 xs:mx-8 md:flex-row flex items-center justify-center xs:flex-col ">
       <div
         class="w-full relative mx-4 border border-light group hover:bg-purple xs:my-3 "
         v-for="banner in banners"
         :key="banner.id"
       >
-        <!-- mt-10 ml-10 -->
         <div
-          class="absolute flex flex-col justify-center items-start ml-10 w-full h-full "
+          class="absolute flex flex-col justify-center items-start md:ml-10 xs:ml-5  w-full h-full "
         >
           <h1
-            class="font-bold text-3xl  tracking-tight text-grayter group-hover:text-white"
+            class="font-bold md:text-3xl xs:text-2xl  tracking-tight text-grayter group-hover:text-white"
           >
             {{ banner.heading }}
           </h1>
@@ -49,7 +48,7 @@
             {{ banner.des }}
           </p>
           <button
-            class="font-bold tracking-tight uppercase py-1 border-b-2 mt-20 border-white text-white opacity-0 group-hover:opacity-100"
+            class="font-bold tracking-tight uppercase py-1 border-b-2 md:mt-20 xs:mt-10 border-white text-white opacity-0 group-hover:opacity-100"
           >
             Shop Now
           </button>
