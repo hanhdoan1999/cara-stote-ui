@@ -118,12 +118,11 @@ Submit
           <span>Categories: Jacket, Men</span>
         </div>
         <!-- Related Products -->
-        <div class="md:my-16 xs:my-8">
+        <div class="md:my-16 xs:my-8 xs:hidden md:block">
             <h1 class="text-center text-4xl font-bold tracking-tight text-grayter md:mb-16 xs:mb-5">Related Products</h1>
         </div>
-        <div class="md:mx-20 xs:mx-5  md:mb-20 xs:mb-5">
-            <carousel :autoplay="true" :nav="false" :items="numcarousel" :responsive="{0:{items:1},600:{items:3}}" :dots="false" :loop="true" :margin='mcarousel' class="px-10">
-              
+        <div class="md:mx-20 xs:mx-5  md:mb-20 xs:mb-5 xs:hidden md:block">
+            <carousel ref="carousel" :items="numcarousel" :autoplay="true" :nav="false"  :dots="false" :loop="true" :margin='mcarousel' class="px-10">
                <div class="text-center" v-for="item in products" :key="item.src">
                  <div class="parent group">
                    <div class="flex z-10 absolute items-end justify-center w-full h-full">
@@ -220,6 +219,7 @@ async created () {
   },
   methods: {
      handleClick(tab, event) {
+        console.log(this.$refs.carousel)
         console.log(tab, event);
       },
           getImgUrl(pic) {

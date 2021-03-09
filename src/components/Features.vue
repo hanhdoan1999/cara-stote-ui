@@ -73,11 +73,11 @@
               class="w-full pb-4 flex items-center justify-start border-b border-dashed border-light"
             >
               <p class="text-lg font-medium text-grayter">Subtotal:</p>
-              <span class="text-lg ml-8">$79.65</span>
+              <span class="text-lg md:ml-8 xs:ml-3">$79.65</span>
             </div>
             <div class="flex items-start justify-start my-5">
               <p class="text-lg font-medium text-grayter">Shipping:</p>
-              <div class="ml-8">
+              <div class="md:ml-8 xs:ml-3">
                 <p class="text-sm text-gray mb-3">
                   There are no shipping methods available. Please double check
                   your address, or contact us if you need any help.

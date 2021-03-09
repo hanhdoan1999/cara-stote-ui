@@ -6,7 +6,7 @@
       "
     >
       <div class="md:ml-20 md:w-1/5 cursor-pointer md:mr-5 xs:m-4 xs:flex xs:items-center xs:justify-between xs:w-full">
-          <img src="../assets/images/cara-logo.png"/>
+          <img src="../assets/images/test.png" style="filter:brightness(0)"/>
           <span v-if="btnOpen===false" @click="openMenu" class="material-icons xs:mr-8 md:hidden" >menu</span>
           <span v-else @click="closeMenu" class="material-icons xs:mr-8 md:hidden">close</span>
       </div>

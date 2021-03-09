@@ -2,6 +2,7 @@
   <div class="w-full bg-white">
     <div class="relative">
      <Header :pageActive="this.namePage" :bgColor="this.bgColor"/>
+     <div class="loader"></div> 
       <el-carousel class="w-full relative md:h-screen xs:h-52 sm:h-72">
         <el-carousel-item v-for="carousel in carousels" :key="carousel.id">
           <!-- mt-64 ml-20 -->
@@ -68,10 +69,14 @@
 </template>
 
 <script>
+import $ from 'jquery'
 import Header from './Header'
 import Footer from './Footer'
 import ListProduct from './ListProduct';
 export default {
+    mounted: function(){
+    this.$nextTick(this.getUnits)
+  },
   components: {
     Footer,
     Header,
@@ -117,6 +122,9 @@ export default {
     getImgUrl(pic) {
       return require("../assets/images/" + pic);
     },
+        getUnits(){
+      $('.loader').fadeOut(3000);
+    }
   },
 };
 </script>
