@@ -9,7 +9,7 @@
           >
             Contact
           </h1>
-          <img src="../assets/images/bg-01.jpg" alt="Content" class="md:h-full xs:h-auto"  />
+          <img src="../assets/images/bg-01.jpg" alt="Content" class="lg:h-full xs:h-auto"  />
         </div>
         <!-- flex items-center justify-between -->
         <div class="md:my-20 md:mx-16 xs:my-10 xs:mx-8 grid md:grid-cols-2 xs:grid-cols-1">

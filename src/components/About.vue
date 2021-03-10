@@ -10,7 +10,7 @@
           >
             About
           </h1>
-          <img src="../assets/images/bg-01.jpg" alt="Content" class="md:h-full xs:h-auto" />
+          <img src="../assets/images/bg-01.jpg" alt="Content" class="lg:h-full xs:h-auto" />
         </div>
         <div class="md:my-20 md:mx-20 xs:mx-10 xs:my-10 ">
           <div class="grid md:grid-cols-3 xs:grid-cols-1">

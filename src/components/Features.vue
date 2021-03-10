@@ -3,7 +3,7 @@
     <div class="relative">
       <Header :pageActive="this.namePage" :bgColor="this.bgColor" />
       <div class="mt-20">
-        <div class="grid md:grid-cols-3 xs:grid-cols-1 justify-center md:mx-10 md:p-20 xs:p-3 xs:mx-2">
+        <div class="grid md:grid-cols-3 xs:grid-cols-1 justify-center lg:mx-5 lg:p-10   xl:mx-10 xl:p-20     xs:p-3 xs:mx-2">
           <div class="col-span-2 border-light border p-4 md:mr-6 xs:mr-0 fearure xs:mb-5">
             <el-table :data="features" style="width: 100%">
               <el-table-column label="PRODUCT" width="100">
@@ -75,9 +75,9 @@
               <p class="text-lg font-medium text-grayter">Subtotal:</p>
               <span class="text-lg md:ml-8 xs:ml-3">$79.65</span>
             </div>
-            <div class="flex items-start justify-start my-5">
+            <div class="flex items-start justify-start my-5 xl:flex-nowrap lg:flex-wrap md:flex-wrap">
               <p class="text-lg font-medium text-grayter">Shipping:</p>
-              <div class="md:ml-8 xs:ml-3">
+              <div class="xl:ml-8 xs:ml-3 lg:ml-0 md:ml-0">
                 <p class="text-sm text-gray mb-3">
                   There are no shipping methods available. Please double check
                   your address, or contact us if you need any help.

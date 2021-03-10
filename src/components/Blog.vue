@@ -10,7 +10,7 @@
           >
             Blog
           </h1>
-          <img src="../assets/images/bg-02.jpg" alt="Content" class="md:h-full xs:h-auto" />
+          <img src="../assets/images/bg-02.jpg" alt="Content" class="lg:h-full xs:h-auto" />
         </div>
 
         <div class="md:my-16 md:mx-20 xs:my-8 xs:mx-10 grid md:grid-cols-3 xs:grid-cols-1">
@@ -72,9 +72,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import SideBlog from './SideBlog.vue';
 export default {
-  created: function(){
-        this.getUnits()
-    },
+
   mounted: function(){
     this.$nextTick(this.getUnits)
   },

@@ -169,7 +169,7 @@
           <div v-if="loading" class="flex justify-center items-center">
               <img src="../assets/images/Spin-1s-100px.gif">
           </div>
-          <div class="grid md:grid-cols-4 xs:grid-cols-1">
+          <div class="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
             <div
               class=" md:mx-5 md:my-8 md:p-7 xs:p-5 xs:my-3 xs:mx-2 rounded-md shadow group hover:shadow-2xl"
               v-for="product in products"
