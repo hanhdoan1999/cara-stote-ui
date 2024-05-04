@@ -238,7 +238,7 @@ export default {
    async created () {
     this.loading = true
     try {
-      const res = await fetch('https://fakestoreapi.com/products/category/women clothing')
+      const res = await fetch('https://fakestoreapi.com/products')
       this.products = await res.json()
       this.loading = false
     } catch (error) {
